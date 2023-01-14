@@ -28,9 +28,9 @@ export const edit = (todoText) => {
     };
 };
 
-export const filter = (value) => {
+export const filtered = (filterType) => {
     return {
         type: FILTER,
-        payload: value,
+        payload: filterType,
     };
 };

@@ -1,5 +1,5 @@
 import shortid from "shortid";
-import { ADDED, COMPLETED, DELETED } from "./actionsType.js";
+import { ADDED, COMPLETED, DELETED, FILTER } from "./actionsType.js";
 import initialState from "./initialState";
 const todoReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -32,6 +32,12 @@ const todoReducer = (state = initialState, action) => {
             return {
                 ...state,
                 todos: state.todos.filter((todo) => todo.id !== action.payload),
+            };
+
+        case FILTER:
+            return {
+                ...state,
+                filter: action.payload,
             };
 
         default:
