@@ -10,9 +10,15 @@ const Todos = () => {
 
     return (
         <div className="mt-6">
-            {filteredTodos(filter, todos).map((todo) => (
-                <Todo key={todo.id} todo={todo} />
-            ))}
+            {todos.length >= 1 ? (
+                filteredTodos(filter, todos).map((todo) => (
+                    <Todo key={todo.id} todo={todo} />
+                ))
+            ) : (
+                <h1 className="text-center font-serif text-[32px]">
+                    Not Todos Found
+                </h1>
+            )}
         </div>
     );
 };
