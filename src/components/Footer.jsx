@@ -30,9 +30,9 @@ const Footer = () => {
                         type="radio"
                         className="mr-1"
                         name="filter"
-                        id="uncompleted"
+                        id="incompleted"
                     />
-                    <label htmlFor="uncompleted">Uncompleted</label>
+                    <label htmlFor="incompleted">Incompleted</label>
                 </div>
             </form>
         </div>
