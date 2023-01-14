@@ -7,10 +7,10 @@ export const added = (todoText) => {
     };
 };
 
-export const completed = (isCompleted) => {
+export const completed = (id) => {
     return {
         type: COMPLETED,
-        payload: isCompleted,
+        payload: id,
     };
 };
 
