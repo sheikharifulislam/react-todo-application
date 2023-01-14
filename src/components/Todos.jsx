@@ -6,6 +6,7 @@ const Todos = () => {
     const {
         state: { todos },
     } = useContext(TodoContext);
+
     return (
         <div className="mt-6">
             {todos.map((todo) => (

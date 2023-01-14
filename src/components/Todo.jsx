@@ -3,7 +3,7 @@ import { TodoContext } from "../context/TodoProvider";
 import Check from "../icons/Check";
 import Delete from "../icons/Delete";
 import Edit from "../icons/Edit";
-import { completed } from "../reducers/todo/actions.js";
+import { completed, deleted } from "../reducers/todo/actions.js";
 
 const Todo = ({ todo }) => {
     const { title, isCompleted, id } = todo;
@@ -19,7 +19,7 @@ const Todo = ({ todo }) => {
             <div className="flex space-x-2">
                 <Check onClick={() => dispatch(completed(id))} />
                 <Edit />
-                <Delete />
+                <Delete onClick={() => dispatch(deleted(id))} />
             </div>
         </div>
     );

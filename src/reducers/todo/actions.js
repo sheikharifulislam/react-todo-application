@@ -14,9 +14,10 @@ export const completed = (id) => {
     };
 };
 
-export const deleted = () => {
+export const deleted = (id) => {
     return {
         type: DELETED,
+        payload: id,
     };
 };
 
