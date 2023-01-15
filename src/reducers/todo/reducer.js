@@ -1,5 +1,5 @@
 import shortid from "shortid";
-import { ADDED, COMPLETED, DELETED, FILTER } from "./actionsType.js";
+import { ADDED, COMPLETED, DELETED, EDIT, FILTER } from "./actionsType.js";
 import initialState from "./initialState";
 const todoReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -22,6 +22,18 @@ const todoReducer = (state = initialState, action) => {
                 todos: state.todos.map((todo) => {
                     if (todo.id === action.payload) {
                         todo.isCompleted = !todo.isCompleted;
+                    }
+
+                    return todo;
+                }),
+            };
+
+        case EDIT:
+            return {
+                ...state,
+                todos: state.todos.map((todo) => {
+                    if (todo.id === action.payload.id) {
+                        todo.title = action.payload.value;
                     }
 
                     return todo;

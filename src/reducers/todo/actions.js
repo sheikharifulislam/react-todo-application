@@ -21,10 +21,13 @@ export const deleted = (id) => {
     };
 };
 
-export const edit = (todoText) => {
+export const edited = (id, todoText) => {
     return {
         type: EDIT,
-        payload: todoText,
+        payload: {
+            value: todoText,
+            id: id,
+        },
     };
 };
 
